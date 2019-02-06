@@ -40,7 +40,7 @@ let query = new Apiquery();
         mcrear.innerHTML = 'Faltan Datos';
       }else{
         //variables
-        query.url = 'https://zionedesign.000webhostapp.com/v1/reservas';
+        query.url = 'http://localhost/apiweb/v1/reservas';
         query.token = 'token';
         query.method = 'POST';
         query.sec = 'crear';
@@ -54,7 +54,7 @@ let query = new Apiquery();
   formLeer.addEventListener('submit', e => {
     e.preventDefault();
     //variables
-    query.url = 'https://zionedesign.000webhostapp.com/v1/reservas';
+    query.url = 'http://localhost/apiweb/v1/reservas';
     query.token = 'token';
     query.method = 'GET';
     query.sec = 'leer';
@@ -68,7 +68,7 @@ let query = new Apiquery();
     //obtener el numero de registros a mostrar por página
     const select = document.querySelector('#limitLeer');
     const limit = select.options[select.selectedIndex].value;
-    query.url = `https://zionedesign.000webhostapp.com/v1/reservas/?limit=${limit}`;
+    query.url = `http://localhost/apiweb/v1/reservas/?limit=${limit}`;
     query.token = 'token';
     query.method = 'GET';
     query.sec = 'leerPag';
@@ -81,7 +81,7 @@ let query = new Apiquery();
     //variables
     //obtener id
     let ID = parseInt(document.querySelector('#idreserva').value); 
-    query.url = `https://zionedesign.000webhostapp.com/v1/reservas/${ID}`;
+    query.url = `http://localhost/apiweb/v1/reservas/${ID}`;
     query.token = 'token';
     query.method = 'GET';
     query.sec = 'leerUno';
@@ -108,7 +108,7 @@ let query = new Apiquery();
         //variables
         //obtener id
         let ID = values.pop();
-        query.url = `https://zionedesign.000webhostapp.com/v1/reservas/${ID}`;
+        query.url = `http://localhost/apiweb/v1/reservas/${ID}`;
         query.token = 'token';
         query.method = 'PUT';
         query.sec = 'actualizar';
@@ -124,7 +124,7 @@ let query = new Apiquery();
     //variables
     //obtener id
     let ID = parseInt(document.querySelector('#idElm').value);
-    query.url = `https://zionedesign.000webhostapp.com/v1/reservas/${ID}`;
+    query.url = `http://localhost/apiweb/v1/reservas/${ID}`;
     query.token = 'token';
     query.method = 'DELETE';
     query.sec = 'eliminar';
@@ -147,7 +147,7 @@ let query = new Apiquery();
       else{
         //obtener busqueda, asignar url al objeto query y llamar al metodo fetch
         let srch = e.target.value;
-        query.url = `https://zionedesign.000webhostapp.com/v1/reservas/${srch}`;
+        query.url = `http://localhost/apiweb/v1/reservas/${srch}`;
         query.fetchCall();
       }
   });
@@ -169,7 +169,7 @@ let query = new Apiquery();
         //obtener busqueda y numero de regitros, asignar url al objeto query y llamar al metodo fetch
         const srch = e.target.value;
         const limit = lbuscarPag.options[lbuscarPag.selectedIndex].value;
-        query.url = `https://zionedesign.000webhostapp.com/v1/reservas/${srch}/?limit=${limit}`;
+        query.url = `http://localhost/apiweb/v1/reservas/${srch}/?limit=${limit}`;
         query.fetchCall();
       }
   });
