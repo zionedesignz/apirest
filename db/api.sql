@@ -1,0 +1,108 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 06-02-2019 a las 12:07:21
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `api`
+--
+CREATE DATABASE IF NOT EXISTS `api` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `api`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reservas`
+--
+
+DROP TABLE IF EXISTS `reservas`;
+CREATE TABLE `reservas` (
+  `id` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time(6) NOT NULL,
+  `servicio` varchar(40) NOT NULL,
+  `tiemposervicio` varchar(180) NOT NULL,
+  `estado` varchar(15) NOT NULL,
+  `nombreusuario` varchar(80) NOT NULL,
+  `telefonousuario` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`id`, `idusuario`, `fecha`, `hora`, `servicio`, `tiemposervicio`, `estado`, `nombreusuario`, `telefonousuario`) VALUES
+(178, 1, '2019-01-06', '10:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'RICARDO', '098098098'),
+(180, 20, '2019-01-06', '11:00:00.000000', 'CHICO | LAVAR + CORTAR + PEINAR', '30', 'PENDIENTE', 'ERTRSE', 'WERTWRET'),
+(181, 5, '2019-01-18', '11:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'PAULA', '908908908'),
+(182, 55, '2019-01-20', '12:00:00.000000', 'CHICA | LAVAR + COLOR + CORTAR + PEINAR', '120', 'PENDIENTE', 'GEMMA', '987978987'),
+(183, 56, '2019-02-02', '09:00:00.000000', 'CHICA | LAVAR + COLOR + CORTAR + PEINAR', '120', 'PENDIENTE', 'LAIA CORRIOLS', '654987987'),
+(184, 65, '2019-02-01', '17:00:00.000000', 'CHICA | LAVAR + PEINAR', '30', 'PENDIENTE', 'TONI', '098098098'),
+(185, 65, '2019-01-19', '15:00:00.000000', 'CHICA | LAVAR + COLOR + CORTAR + PEINAR', '120', 'PENDIENTE', 'LAURA', '555666555'),
+(188, 9, '2019-02-08', '10:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'JULIA ROBERTS', '654897456'),
+(191, 189, '2020-10-10', '15:00:00.000000', 'CHICA | LAVAR + COLOR + CORTAR + PEINAR', '120', 'PENDIENTE', 'poiopiop', '908908908098'),
+(192, 18, '2020-01-01', '01:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'puuuuu', '999999'),
+(193, 55, '2000-02-15', '19:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'LORENA CAZAAA', '9999889898'),
+(194, 55, '2019-01-24', '10:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'NULL', 'NULL'),
+(195, 15, '2019-01-12', '15:00:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'asdifa', '928340923'),
+(196, 25, '2019-02-03', '09:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'poauifoad', '980908'),
+(197, 88, '2021-10-02', '22:01:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'PEPITO', '892834938'),
+(198, 88, '2015-07-03', '23:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'OOOLL', '99999'),
+(200, 95, '2019-01-01', '01:01:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'paosidf', '098908'),
+(201, 25, '2019-01-02', '02:01:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'popopo', '989898'),
+(202, 9, '2020-02-03', '02:02:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'pllplp', '998998'),
+(204, 888, '2017-03-02', '23:00:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'policia', '98989898'),
+(205, 59, '2016-10-02', '01:58:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'opo', '0909'),
+(207, 3434, '2009-02-02', '23:50:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'iuoiuiou', '898989898'),
+(209, 56456, '2017-02-02', '22:58:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'poiopiipo', '989898'),
+(210, 88, '2026-04-12', '04:01:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'okokkoj', '99999'),
+(214, 25, '2019-01-01', '22:58:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'oioio', '99'),
+(215, 85, '2019-01-01', '01:03:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'poioi', '90909'),
+(216, 654, '2022-10-03', '22:01:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'oiui', '9898'),
+(218, 885, '2019-01-01', '22:40:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'prueba', '897987897'),
+(219, 89, '2019-01-01', '23:59:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'olivia', '908908'),
+(222, 85456, '2037-02-02', '22:58:00.000000', 'CHICA | LAVAR + COLOR + PEINAR', '90', 'PENDIENTE', 'RRRROOOOO', '000000'),
+(223, 4564, '2022-04-03', '01:47:00.000000', 'CHICA | LAVAR + CORTAR + PEINAR', '60', 'PENDIENTE', 'asfa', '234234');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `reservas`
+--
+ALTER TABLE `reservas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `fecha` (`fecha`,`hora`),
+  ADD KEY `idusuario` (`idusuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `reservas`
+--
+ALTER TABLE `reservas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
