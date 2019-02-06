@@ -116,9 +116,10 @@ export default class Apiquery {
       //montar contenido
       for(let i of rData.data){
         datos += `<div class='bg-light rounded m-1 p-1'>
-                    <p>ID: ${i.idusuario}</p>
+                    <p>ID RESERVA: ${i.id}</p>
+                    <p>ID USUARIO: ${i.idusuario}</p>
                     <p>FECHA: ${i.fecha}</p>
-                    <p>HORA: ${i.hora}</p>
+                    <p>HORA: ${i.hora.substr(0,5)}</p>
                     <p>SERVICIO: ${i.servicio}</p>
                     <p>DURACIÓN: ${i.tiemposervicio}min</p>
                     <p>ESTADO: ${i.estado}</p>
