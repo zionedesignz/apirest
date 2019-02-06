@@ -22,7 +22,6 @@ $reserva->id = $param;
 
 // realizar consulta  (si encuentra resultados -> true)
 if($reserva->leerId()){
-	echo 'prueebaa';
 
 	if($reserva->id!=null){
 
