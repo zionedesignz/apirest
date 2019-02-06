@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link href="img/zeta.ico" rel="icon" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
+<title>API REST</title>
+</head>
+<body>
+  <h1 class="text-center mt-2 mb-5">API REST TEST</h1>
+
+  <ul class="nav nav-tabs flex-column flex-sm-row mx-2" id="myTab" role="tablist">
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link active" id="crear-tab" data-toggle="tab" href="#crear-cnt" role="tab" aria-controls="crear-cnt" aria-selected="true">CREAR</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="leer-tab" data-toggle="tab" href="#leer-cnt" role="tab" aria-controls="leer-cnt" aria-selected="false">LEER</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="leer-pag-tab" data-toggle="tab" href="#leer-pag-cnt" role="tab" aria-controls="leer-pag-cnt" aria-selected="false">LEER PAG</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="leer-uno-tab" data-toggle="tab" href="#leer-uno-cnt" role="tab" aria-controls="leer-uno-cnt" aria-selected="false">LEER UNO</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="actualizar-tab" data-toggle="tab" href="#actualizar-cnt" role="tab" aria-controls="actualizar-cnt" aria-selected="false">ACTUALIZAR</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="eliminar-tab" data-toggle="tab" href="#eliminar-cnt" role="tab" aria-controls="eliminar-cnt" aria-selected="false">ELIMINAR</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="buscar-tab" data-toggle="tab" href="#buscar-cnt" role="tab" aria-controls="buscar-cnt" aria-selected="false">BUSCAR</a>
+    </li>
+    <li class="nav-item flex-sm-fill">
+      <a class="nav-link" id="buscar-pag-tab" data-toggle="tab" href="#buscar-pag-cnt" role="tab" aria-controls="buscar-pag-cnt" aria-selected="false">BUSCAR PAG</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+
+    <div class="row tab-pane fade show active" id="crear-cnt" role="tabpanel" aria-labelledby="crear-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">CREAR</h3>
+        <form id="crear">
+          <div class="form-group">
+            <label for="idusuario">ID USUARIO</label>
+            <input type="text" class="form-control form-control-sm" id="idusuario" name="idusuario" placeholder="Ingrese ID usuario">
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="form-control form-control-sm" id="fecha" name="fecha">
+          </div>
+          <div class="form-group">
+            <label for="hora">Hora</label>
+            <input type="time" class="form-control form-control-sm" id="hora" name="hora">
+          </div>
+          <div class="form-group">
+            <label for="servicio">Servicio</label>
+            <select class="form-control form-control-sm" id="servicio" name="servicio">
+              <option value="30">CHICO | LAVAR + CORTAR + PEINAR</option>
+              <option value="30">CHICA | LAVAR + PEINAR</option>
+              <option value="60">CHICA | LAVAR + CORTAR + PEINAR</option>
+              <option value="90">CHICA | LAVAR + COLOR + PEINAR</option>
+              <option value="120">CHICA | LAVAR + COLOR + CORTAR + PEINAR</option>
+              <option value="150">CHICA | LAVAR + MECHAS + CORTAR + PEINAR</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Ingrese nombre">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control form-control-sm" id="telefono" name="telefono" placeholder="Ingrese telefono">
+          </div>
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Enviar</button>
+        </form>
+        <div id="mcrear"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="leer-cnt" role="tabpanel" aria-labelledby="leer-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">LEER</h3>
+        <form id="leer">
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Mostrar Reservas</button>
+        </form>
+        <div id="mleer"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="leer-pag-cnt" role="tabpanel" aria-labelledby="leer-pag-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">LEER CON PAGINACIÓN</h3>
+        <form id="leerPag">
+          <div class="form-group row">
+            <label for="limitLeer" class="col-8 col-md-9 col-lg-10 col-form-label-sm text-right">Resultados por página</label>
+            <div class="col-4 col-md-3 col-lg-2">
+              <select class="form-control form-control-sm" id="limitLeer" name="limitLeer">
+                <option value="2">2</option>
+                <option value="5" selected="selected">5</option>
+                <option value="7">7</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Mostrar Reservas</button>
+        </form>
+        <div id="mleerPag"></div>
+        <div id="pleerPag"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="leer-uno-cnt" role="tabpanel" aria-labelledby="leer-uno-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">LEER UNO</h3>
+        <form id="leerUno">
+          <div class="form-group">
+            <label for="idreserva">ID RESERVA</label>
+            <input type="text" class="form-control form-control-sm" id="idreserva" name="idreserva" placeholder="Ingrese ID reserva">
+          </div>
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Mostrar Reserva</button>
+        </form>
+        <div id="mleerUno"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="actualizar-cnt" role="tabpanel" aria-labelledby="actualizar-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">ACTUALIZAR</h3>
+        <form id="actualizar">
+          <div class="form-group">
+            <label for="idusuarioAct">ID USUARIO</label>
+            <input type="text" class="form-control form-control-sm" id="idusuarioAct" name="idusuarioAct" placeholder="Ingrese ID usuario">
+          </div>
+          <div class="form-group">
+            <label for="fechaAct">Fecha</label>
+            <input type="date" class="form-control form-control-sm" id="fechaAct" name="fechaAct">
+          </div>
+          <div class="form-group">
+            <label for="horaAct">Hora</label>
+            <input type="time" class="form-control form-control-sm" id="horaAct" name="horaAct">
+          </div>
+          <div class="form-group">
+            <label for="servicioAct">Servicio</label>
+            <select class="form-control form-control-sm" id="servicioAct" name="servicio">
+              <option value="30">CHICO | LAVAR + CORTAR + PEINAR</option>
+              <option value="30">CHICA | LAVAR + PEINAR</option>
+              <option value="60">CHICA | LAVAR + CORTAR + PEINAR</option>
+              <option value="90">CHICA | LAVAR + COLOR + PEINAR</option>
+              <option value="120">CHICA | LAVAR + COLOR + CORTAR + PEINAR</option>
+              <option value="150">CHICA | LAVAR + MECHAS + CORTAR + PEINAR</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nombreAct">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="nombreAct" name="nombreAct" placeholder="Ingrese nombre">
+          </div>
+          <div class="form-group">
+            <label for="telefonoAct">Telefono</label>
+            <input type="text" class="form-control form-control-sm" id="telefonoAct" name="telefonoAct" placeholder="Ingrese telefono">
+          </div>
+          <div class="form-group">
+            <label for="idAct">ID RESERVA</label>
+            <input type="text" class="form-control form-control-sm" id="idAct" name="idAct" placeholder="Ingrese ID reserva">
+          </div>
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Enviar</button>
+        </form>
+        <div id="mactualizar"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="eliminar-cnt" role="tabpanel" aria-labelledby="eliminar-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">ELIMINAR</h3>
+        <form id="eliminar">
+          <div class="form-group">
+            <label for="idElm">ID RESERVA</label>
+            <input type="text" class="form-control form-control-sm" id="idElm" name="idElm" placeholder="Ingrese ID reserva">
+          </div>
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Eliminar Reserva</button>
+        </form>
+        <div id="meliminar"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="buscar-cnt" role="tabpanel" aria-labelledby="buscar-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">BUSCAR</h3>
+        <form id="buscar">
+          <div class="form-group">
+            <label for="busqueda">ID RESERVA / NOMBRE / FECHA</label>
+            <input type="text" class="form-control form-control-sm" id="busqueda" name="busqueda" placeholder="Ingrese ID reserva, nombre o fecha">
+          </div>
+        </form>
+        <div id="mbuscar"></div>
+      </div>
+    </div>
+
+    <div class="row tab-pane fade" id="buscar-pag-cnt" role="tabpanel" aria-labelledby="buscar-pag-tab">
+      <div class="col-10 col-sm-8 col-md-6 mx-auto rounded p-3">
+        <h3 class="text-center">BUSCAR CON PAGINACIÓN</h3>
+        <form id="buscarPag">
+          <div class="form-group row">
+            <label for="limitBuscar" class="col-8 col-md-9 col-lg-10 col-form-label-sm text-right">Resultados por página</label>
+            <div class="col-4 col-md-3 col-lg-2">
+              <select class="form-control form-control-sm" id="limitBuscar" name="limitBuscar">
+                <option value="2">2</option>
+                <option value="5" selected="selected">5</option>
+                <option value="7">7</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="busquedaPag">ID RESERVA / NOMBRE / FECHA</label>
+            <input type="text" class="form-control form-control-sm" id="busquedaPag" name="busquedaPag" placeholder="Ingrese ID reserva, nombre o fecha">
+          </div>
+        </form>
+        <div id="mbuscarPag"></div>
+        <div id="pbuscarPag"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- jQuery first, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+  <script src="./js/api.js" type="module"></script>
+</body>
+</html>
