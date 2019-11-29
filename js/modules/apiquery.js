@@ -28,8 +28,8 @@ export default class Apiquery {
         method: this.method,
         body: JSON.stringify(this.data),
         headers: new Headers({
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          /*'Content-Type': 'application/json',
+          'Accept': 'application/json',*/
           'Authorization': this.token
         }),
       })
@@ -60,8 +60,8 @@ export default class Apiquery {
       await fetch(this.url, {
         method: this.method,
         headers: new Headers({
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          /*'Content-Type': 'application/json',
+          'Accept': 'application/json',*/
           'Authorization': this.token
         }),
       })
